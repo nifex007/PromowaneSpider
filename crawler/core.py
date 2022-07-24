@@ -17,8 +17,6 @@ class OlxPromowaneSpider(scrapy.Spider):
             yield Request(url, headers=headers)
 
     def parse(self, response):
-        # mainpageAds = "/html/body/div[1]/section[2]/div[3]/section[2]"
-        
         mainpageAds = "//*[@id='mainpageAds']/ul/li"
         dict_list = []
         for ad in response.xpath(mainpageAds):
@@ -49,15 +47,3 @@ class OlxPromowaneSpider(scrapy.Spider):
         write_to_file("output.json", dict_list)
         
         
-
-        
-            
-        # for quote in response.css('div.quote'):
-        #     yield {
-        #         'author': quote.xpath('span/small/text()').get(),
-        #         'text': quote.css('span.text::text').get(),
-        #     }
-
-        # next_page = response.css('li.next a::attr("href")').get()
-        # if next_page is not None:
-        #     yield response.follow(next_page, self.parse)
