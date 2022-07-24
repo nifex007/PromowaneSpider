@@ -18,10 +18,6 @@ def write_to_file(file_name:str, dict_list:list):
     with open(file_name, "w", encoding="utf-8") as outfile:
         outfile.write(json_data)
 
-def encode_text(text):
-    text_dump = json.dumps(text)
-    text_load = json.loads(text_dump)
-    return text_load.encode("UTF-8").decode("UTF-8")
     
 
 
