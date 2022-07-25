@@ -38,6 +38,5 @@ class OlxPromowaneSpider(scrapy.Spider):
                 }
             )
             
-            yield response.follow(description, callback=self.parse_description, headers=self.headers)
 
         write_to_file("output.json", dict_list, "json")
