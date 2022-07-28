@@ -17,12 +17,4 @@ def write_to_file(file_name:str, doc, format="json"):
     
     with open(file_name, "w", encoding="utf-8") as outfile:
         outfile.write(doc)
-
-
-
-    
-
-
-        
-
     
